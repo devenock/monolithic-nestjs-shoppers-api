@@ -1,5 +1,5 @@
 # Define the base image to be used for development environment
-FROM node:18-alpine
+FROM node:20-alpine
 
 # Set the working directory inside the container
 WORKDIR /usr/src/app
@@ -8,6 +8,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Install project dependencies
+RUN npm install -g @nestjs/cli
 RUN npm install
 
 # Copy the rest of the application code to the working directory
@@ -24,4 +25,4 @@ CMD ["npm", "run", "start:dev"]
 
 # OR
 # You can use ENTRYPOINT to run the application as an executable
-# ENTRYPOINT ["npm", "run", "start:dev"]
+# ENTRYPOINT ["/bin/sh", "-c", "npm run start:dev"]

@@ -12,14 +12,14 @@ import * as redisStore from 'cache-manager-redis-store';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
+      host: 'db', // when using docker-compose, use the service name as the host
       port: 5432,
       username: 'postgres',
       password: 'postgres',
       database: 'pingshop',
       entities: [User],
       synchronize: true,
-      // logging: true,
+      logging: true,
     }),
     ConfigModule.forRoot({
       // SPECIFY THE PATH
