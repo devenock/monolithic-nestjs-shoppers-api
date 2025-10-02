@@ -17,6 +17,7 @@ import { User } from './modules/users/user.entity';
       database: 'pingshop',
       entities: [User],
       synchronize: true,
+      // logging: true,
     }),
     ConfigModule.forRoot({
       // SPECIFY THE PATH

@@ -1,4 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { UserStatus } from './enums/status.enum';
 
 @Entity()
 export class User {
@@ -13,6 +14,16 @@ export class User {
 
   @Column()
   email: string;
+
+  @Column()
+  role: string;
+
+  @Column({
+    type: 'enum',
+    enum: UserStatus,
+    default: UserStatus.ACTIVE,
+  })
+  status: UserStatus;
 
   @Column()
   location: string;
