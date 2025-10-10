@@ -1,22 +1,31 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, ObjectId, PrimaryGeneratedColumn } from 'typeorm';
 import { UserStatus } from './enums/status.enum';
 
 @Entity()
-export class User {
+export class UserEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
-  firstName: string;
-
-  @Column()
-  lastName: string;
+  username: string;
 
   @Column()
   email: string;
 
   @Column()
   role: string;
+
+  @Column()
+  password: string;
+
+  @Column()
+  confirmPassword: string;
+
+  @Column()
+  createdAt: Date;
+
+  @Column({ nullable: true })
+  updatedAt: Date;
 
   @Column({
     type: 'enum',
@@ -27,7 +36,4 @@ export class User {
 
   @Column()
   location: string;
-
-  @Column()
-  age: number;
 }

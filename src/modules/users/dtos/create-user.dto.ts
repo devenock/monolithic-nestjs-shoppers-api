@@ -1,8 +1,5 @@
-export class CreateUserDto{
-id: number;
-email: string;
-firstName: string;
-lastName: string;
-location: string;
-role: string;
+import { BaseUserDto } from "src/shared/dto/base-user.dto";
+
+export class CreateUserDto extends BaseUserDto {
+    createdAt: Date;
 }
