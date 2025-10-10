@@ -5,7 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './modules/users/users.module';
 import { ProductsModule } from './modules/products/products.module';
 import { AuthModule } from './modules/auth/auth.module';
-import { User } from './modules/users/user.entity';
+import { UserEntity } from './modules/users/user.entity';
 import * as redisStore from 'cache-manager-redis-store';
 
 @Module({
@@ -17,7 +17,7 @@ import * as redisStore from 'cache-manager-redis-store';
       username: 'postgres',
       password: 'postgres',
       database: 'pingshop',
-      entities: [User],
+      entities: [UserEntity],
       synchronize: true,
       logging: true,
     }),

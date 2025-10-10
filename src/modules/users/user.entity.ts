@@ -2,7 +2,7 @@ import { Entity, Column, ObjectId, PrimaryGeneratedColumn } from 'typeorm';
 import { UserStatus } from './enums/status.enum';
 
 @Entity()
-export class User {
+export class UserEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -20,6 +20,12 @@ export class User {
 
   @Column()
   confirmPassword: string;
+
+  @Column()
+  createdAt: Date;
+
+  @Column({ nullable: true })
+  updatedAt: Date;
 
   @Column({
     type: 'enum',
