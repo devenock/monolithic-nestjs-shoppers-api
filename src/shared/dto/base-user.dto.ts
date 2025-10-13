@@ -1,12 +1,28 @@
-import { UserStatus } from "src/modules/users/enums/status.enum";
+import { ApiProperty } from '@nestjs/swagger';
+import { UserStatus } from 'src/modules/users/enums/status.enum';
 
 export class BaseUserDto {
-    id: number;
-    email: string;
-    username: string;
-    password: string;
-    confirmPassword: string;
-    location: string;
-    role: string;
-    status: UserStatus
+  @ApiProperty()
+  id: number;
+
+  @ApiProperty()
+  email: string;
+
+  @ApiProperty()
+  username: string;
+
+  @ApiProperty()
+  password: string;
+
+  @ApiProperty()
+  confirmPassword: string;
+
+  @ApiProperty()
+  location: string;
+
+  @ApiProperty()
+  role: string;
+
+  @ApiProperty()
+  status: UserStatus;
 }
