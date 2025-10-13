@@ -7,7 +7,7 @@ import { jwtConstants } from './constants';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserEntity } from '../users/user.entity';
 import { APP_GUARD } from '@nestjs/core';
-import { AuthGuard } from './auth.guard';
+import { AuthGuard } from './guards/auth.guard';
 
 @Module({
   imports: [
